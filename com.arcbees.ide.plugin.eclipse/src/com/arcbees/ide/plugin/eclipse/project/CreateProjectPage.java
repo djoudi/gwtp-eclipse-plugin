@@ -273,6 +273,11 @@ public class CreateProjectPage extends WizardPage {
         IObservableValue bytesProjectConfigModelgetWorkspacePathObserveValue = PojoProperties.value("bytes").observe(projectConfigModel.getWorkspacePath());
         bindingContext.bindValue(observeTextWorkspacePathObserveWidget, bytesProjectConfigModelgetWorkspacePathObserveValue, null, null);
         //
+        IObservableValue observeTextPackageNameObserveWidget_1 = WidgetProperties.text(SWT.Modify).observe(packageName);
+        IObservableValue bytesPackageNamegetTextObserveValue = PojoProperties.value("bytes").observe(packageName.getText());
+        UpdateValueStrategy strategy_1 = new UpdateValueStrategy();
+        bindingContext.bindValue(observeTextPackageNameObserveWidget_1, bytesPackageNamegetTextObserveValue, strategy_1, null);
+        //
         return bindingContext;
     }
 }
